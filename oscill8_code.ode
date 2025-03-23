@@ -1,0 +1,11 @@
+par alpha_P=0.1
+par alpha_A=0.1
+par mu=0.0001
+par h=0.4
+par kappa=0.5
+par gamma_Plant=2.32214
+par gamma_Pollinator=1.693757
+init A=1.0, P=1.0
+dA/dt=A*(alpha_A - kappa - A + gamma_Pollinator*P/(1+h*gamma_Pollinator*P)) + mu
+dP/dt=P*(alpha_P - P + gamma_Plant*A/(1+h*gamma_Plant*A)) + mu
+done
